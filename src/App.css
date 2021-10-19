@@ -5,6 +5,10 @@ body {
   background-repeat: no-repeat;
 }
 
+#container {
+margin-bottom: 200px;
+}
+
 top {
   height: 1%;
   margin: auto;
@@ -37,8 +41,15 @@ margin-left: 10px;
 #answerBar {
   text-align: center;
   padding: 20px 0;
-  font-size: 26px;
+  font-size: 30px;
+  text-transform: uppercase;
 }
+#submission {
+  color: white;
+  letter-spacing: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 
 .button {
   margin-left: 2px;
@@ -79,6 +90,8 @@ margin-left: 10px;
   background-color: rgba(253, 251, 251, 0.863);
   border-radius: 10px;
   transition: all 1s;
+  text-transform: uppercase;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 #letterC {
