@@ -5,6 +5,10 @@ body {
   background-repeat: no-repeat;
 }
 
+#container {
+margin-bottom: 200px;
+}
+
 top {
   height: 1%;
   margin: auto;
@@ -26,29 +30,41 @@ h4 {
 
 }
 
-#instructions {
+.instructions {
 width: 40%;
 color:rgba(253, 251, 251, 0.863);
 font-size: 20px;
 text-shadow: 1px 1px black;
+margin-left: 10px;
 }
 
-
-h2{
-  font-size: 36px;
-  background-color: rgba(253, 251, 251, 0.863);
-  color: "#062821";
-  border-radius: 10px;
-  transition: all 1s;
-}
-
-#letter1 {
-  margin: auto;
-  width: 76px;
-  border: 3px solid #062821;
+#answerBar {
   text-align: center;
   padding: 20px 0;
+  font-size: 30px;
+  text-transform: uppercase;
 }
+#submission {
+  color: white;
+  letter-spacing: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+
+.button {
+  margin-left: 2px;
+  margin-right: 2px;
+  background-color: transparent; /* Green */
+  border: 1px solid #062821;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+  }
 
 #line2 {
   display: flex;
@@ -57,35 +73,6 @@ h2{
   margin-right: 30%;
 }
 
-#letter2 {
-  margin: auto;
-  width: 76px;
-  border: 3px solid #062821;
-  text-align: center;
-  padding: 20px 0;
-}
-
-#letter3 {
-  margin: auto;
-  width: 76px;
-  border: 3px solid #062821;
-  text-align: center;
-  padding: 20px 0;
-}
-
-#letterC {
-  background-color: yellow;
-  margin: auto;
-  width: 76px;
-  border: 3px solid #062821;
-  text-align: center;
-  padding: 20px 0;
-}
-
-
-
-
-
 #line4 {
   display: flex;
   align-items: center;
@@ -93,23 +80,22 @@ h2{
   margin-right: 30%;
 }
 
-#letter5 {
+.puzzleLetter {
   margin: auto;
   width: 76px;
   border: 3px solid #062821;
   text-align: center;
   padding: 20px 0;
+  font-size: 36px;
+  background-color: rgba(253, 251, 251, 0.863);
+  border-radius: 10px;
+  transition: all 1s;
+  text-transform: uppercase;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-#letter6 {
-  margin: auto;
-  width: 76px;
-  border: 3px solid #062821;
-  text-align: center;
-  padding: 20px 0;
-}
-
-#letter7 {
+#letterC {
+  background-color: yellow;
   margin: auto;
   width: 76px;
   border: 3px solid #062821;
@@ -125,18 +111,7 @@ h2{
 
 }
 
-#submitButton {
-background-color: teal; /* Green */
-border: 1px solid #062821;
-border-radius: 10px;
-color: white;
-padding: 10px 15px;
-text-align: center;
-text-decoration: none;
-display: inline-block;
-font-size: 20px;
-text-shadow: 1px 1px black;
-}
+
 
 #newPuzzle {
   background-color: rgba(80, 2, 80, 0.966); /* Green */
@@ -149,6 +124,8 @@ text-decoration: none;
 display: inline-block;
 font-size: 20px;
 text-shadow: 1px 1px black;
+margin-bottom: 300px;
+
 }
 
 #score{
