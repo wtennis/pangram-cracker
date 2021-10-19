@@ -1,38 +1,170 @@
-.App {
+
+body {
+  background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg"); 
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+top {
+  height: 1%;
+  margin: auto;
+  padding: 1%;
+}
+
+h1 {
+  font-size: 64px;
+  color: rgba(253, 251, 251, 0.863);
   text-align: center;
+  text-decoration: underline;
+  text-shadow: 1px 1px black;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+h4 {
+  font-size: 30px;
   color: white;
+  text-shadow: 1px 1px black;
+
 }
 
-.App-link {
-  color: #61dafb;
+#instructions {
+width: 40%;
+color:rgba(253, 251, 251, 0.863);
+font-size: 20px;
+text-shadow: 1px 1px black;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+h2{
+  font-size: 36px;
+  background-color: rgba(253, 251, 251, 0.863);
+  color: "#062821";
+  border-radius: 10px;
+  transition: all 1s;
 }
+
+#letter1 {
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#line2 {
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#letter2 {
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#letter3 {
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#letterC {
+  background-color: yellow;
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+
+
+
+
+#line4 {
+  display: flex;
+  align-items: center;
+  margin-left: 30%;
+  margin-right: 30%;
+}
+
+#letter5 {
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#letter6 {
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#letter7 {
+  margin: auto;
+  width: 76px;
+  border: 3px solid #062821;
+  text-align: center;
+  padding: 20px 0;
+}
+
+#guess {
+  min-width:10%;
+  height: 30px;
+  background-color:#d3d3d3;
+  border: 1px solid #062821;
+
+}
+
+#submitButton {
+background-color: teal; /* Green */
+border: 1px solid #062821;
+border-radius: 10px;
+color: white;
+padding: 10px 15px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+text-shadow: 1px 1px black;
+}
+
+#newPuzzle {
+  background-color: rgba(80, 2, 80, 0.966); /* Green */
+border: 1px solid #062821;
+border-radius: 10px;
+color: white;
+padding: 10px 15px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 20px;
+text-shadow: 1px 1px black;
+}
+
+#score{
+  font-size: 30px;
+  position: absolute;
+  float: right;
+  right: 50%;
+  color: rgba(253, 251, 251, 0.863);
+  text-shadow: 1px 1px black;
+
+}
+
+
+#answerList {
+  font-size: 30px;
+  color: rgba(253, 251, 251, 0.863);
+  text-shadow: 1px 1px black;
+}
+
