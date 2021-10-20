@@ -36,6 +36,8 @@ function App() {
     }
 ]
   const [submission, setSubmission] = useState('')
+  const [score, setScore] = useState('')
+  const [answerList, setAnswerList] = useState([])
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
 
   console.log(puzzle)
@@ -47,6 +49,43 @@ function handleClick(e){
 function handleDelete(){
   setSubmission(submission.slice(0, -1))
 }
+
+function handleEnter(){
+  console.log(submission);
+  let pangram = false
+  let valid = false
+  if (submission.length>6) {pangram = checkPangram()}
+  if (pangram){return}
+  valid = checkValid()
+  console.log(valid)
+  if (valid){return}
+  alert('Not a valid word')
+  setSubmission('')
+}
+
+function checkPangram(){
+  puzzle.pangrams.forEach((pangram) => { 
+    if (submission.toLowerCase() === pangram){
+        setScore(score + 3);
+        setSubmission('');
+        alert('pangram!')
+        return true;
+    }
+  })
+  return false
+}
+
+function checkValid(){
+  puzzle.valids.forEach((valid) => { 
+    if (submission.toLowerCase() === valid){
+        setScore(score + 1);
+        setSubmission('');
+        alert('valid!')
+        return true;
+    }
+  })
+}
+
   return (
     <div id = "container">
     <h1>Pangram Cracker</h1>
@@ -57,8 +96,8 @@ function handleDelete(){
       <div id = "answerBar">
         <h2 id = "submission">{submission}</h2> 
         <button onClick={handleDelete} className ="button">Delete</button>
-        <button className ="button">Jumble</button>
-        <button className ="button">Enter</button>
+        <button className="button">Jumble</button>
+        <button className="button" onClick={handleEnter}>Enter</button>
       </div>
       <div id ="puzzle">
      <h2 
@@ -77,7 +116,7 @@ function handleDelete(){
      </div>
      <h2 className = "puzzleLetter" onClick={(e) => handleClick(e)}>{puzzle.name[6]}</h2>
       </div> 
-      <h3 id = "score">Score:</h3>
+      <h3 id = "score">Score: {score}</h3>
     </div>
   );
 }
