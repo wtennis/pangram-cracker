@@ -43,7 +43,6 @@ function App() {
   const [pangram, setPangram] = useState(false)
   const [valid, setValid] = useState(false)
 
-
   console.log(puzzle)
 
 function handleClick(letter){
@@ -88,6 +87,10 @@ function checkValid(){
         alert('valid!')
     }
   })
+}
+
+function jumble(){
+
 }
 
 document.addEventListener('keydown', handleKeyDown)
