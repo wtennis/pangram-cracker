@@ -25,7 +25,7 @@ function App() {
         id: 4,
         name: 'lanceuy',
         pangrams: ['uncleanly'],
-        valids: ['unlay', 'lacey', 'uncle','unlace', 'lunacy', 'lance', 'clean', 'cleanly' ],
+        valids: ['unlay', 'unclean', 'lacey', 'uncle','unlace', 'lunacy', 'lance', 'clean', 'cleanly' ],
     },
     {
         id: 5,
@@ -36,16 +36,14 @@ function App() {
     }
 ]
   const [submission, setSubmission] = useState('')
-  const [score, setScore] = useState('')
+  const [score, setScore] = useState(0)
   const [answerList, setAnswerList] = useState([])
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
-  const [keyState, setKeyState] = useState('')
   const [pangram, setPangram] = useState(false)
   const [valid, setValid] = useState(false)
-  
+
 
   useEffect(() => {
-    console.log('addEventListener useEffect fired')
     document.addEventListener('keydown', handleKeyDown);
   return function cleanup() {
     document.removeEventListener('keydown', handleKeyDown);
@@ -53,7 +51,6 @@ function App() {
 }, [submission]);
 
 function handleKeyDown(e){
-  console.log(e.key, 'pressed')
   switch (e.key) {
     case '4':
       console.log(submission);
@@ -96,16 +93,23 @@ function handleDelete(){
   setSubmission(submission.slice(0, -1))
 }
 
-function handleEnter(){
-  console.log(submission);
-  if (submission.length<5){
-    console.log('too short')
-  }else 
-  console.log('long enough')
+async function handleEnter() {
+  try {
+    const pan = await checkPangram();
+    const val = await checkValid(pan);
+    const inval = await invalidAlert(val);
+  } catch(error) {
+    console.log(error);
+  }
 }
 
+function invalidAlert(){
+  setSubmission('')
+}
+
+
 function checkPangram(){
-  puzzle.pangrams.forEach((pangram) => { 
+  puzzle.pangrams.map((pangram) => { 
     if (submission.toLowerCase() === pangram){
         setPangram(true)
         setScore(score + 3);
@@ -114,15 +118,16 @@ function checkPangram(){
     }
   })
 }
+
 function checkValid(){
   puzzle.valids.forEach((valid) => { 
     if (submission.toLowerCase() === valid){
-        setValid(true)
         setScore(score + 1);
         setSubmission('');
         alert('valid!')
     }
   })
+  return valid
 }
 
 function jumble(){
@@ -132,7 +137,6 @@ console.log(submission)
   return (
     <div id = "container">
     <h1>Pangram Cracker</h1>
-    <h1>{keyState}</h1>
       <div className = "instructions">
         <h4 id= "instructions-header">Instructions</h4>
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
