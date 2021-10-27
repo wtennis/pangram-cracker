@@ -1,5 +1,5 @@
 import './App.css';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const puzzles = [
@@ -42,8 +42,32 @@ function App() {
   const [keyState, setKeyState] = useState('')
   const [pangram, setPangram] = useState(false)
   const [valid, setValid] = useState(false)
+  
 
-  console.log(puzzle)
+  useEffect(() => {
+   console.log('useEffect fired')
+
+   document.addEventListener('keydown', handleKeyDown)
+
+  function handleKeyDown(e){
+    console.log(e.key, 'pressed')
+    switch (e.key) {
+      case '4':
+        console.log('submission:', submission);
+        break;
+      case 'Enter':
+        console.log('Enter pressed');
+        // handleEnter();
+        break;
+      case puzzle.name[0]:
+      handleClick(puzzle.name[0])
+        break;
+      case "Backspace":
+        handleDelete();
+          break;
+    }
+  }
+  }, [])
 
 function handleClick(letter){
   setSubmission(submission + letter)
@@ -56,15 +80,9 @@ function handleDelete(){
 function handleEnter(){
   console.log(submission);
   if (submission.length<5){
-    alert('submission too short')
-  }else if (submission.length>6) {
-    checkPangram()
-  }else if (submission.length>4 && !pangram) {
-    checkValid()
-  }else if (!pangram && !valid){alert('Not a valid word')}
-  setSubmission('')
-  setPangram(false);
-  setValid(false);
+    console.log('submission too short')
+  }else 
+  console.log('submission is long enough')
 }
 
 function checkPangram(){
@@ -91,44 +109,6 @@ function checkValid(){
 
 function jumble(){
 
-}
-
-document.addEventListener('keydown', handleKeyDown)
-
-function handleKeyDown(e){
-  switch (e.key) {
-    case 'Enter':
-      console.log('Enter pressed');
-      handleEnter();
-      break;
-    case puzzle.name[0]:
-    handleClick(puzzle.name[0])
-      break;
-    // case puzzle.name[1]:
-    //   handleClick(puzzle.name[1])
-    //     break;
-    // case puzzle.name[2]:
-    //   handleClick(puzzle.name[2])
-    //     break;
-    // case puzzle.name[3]:
-    //   handleClick(puzzle.name[3])
-    //     break;
-    //     case puzzle.name[4]:
-    //       handleClick(puzzle.name[4])
-    //         break;
-    //   case puzzle.name[5]:
-    //     handleClick(puzzle.name[5])
-    //       break;
-    //     case puzzle.name[6]:
-    //       handleClick(puzzle.name[6])
-    //         break;
-        case "Delete":
-          handleDelete();
-            break;
-    default:
-      console.log(`What key did you press?`);
-  }
-  console.log(e.key, 'pressed')
 }
 
   return (
