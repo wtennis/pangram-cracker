@@ -45,29 +45,48 @@ function App() {
   
 
   useEffect(() => {
-   console.log('useEffect fired')
+    console.log('addEventListener useEffect fired')
+    document.addEventListener('keydown', handleKeyDown);
+  return function cleanup() {
+    document.removeEventListener('keydown', handleKeyDown);
+  };
+}, [submission]);
 
-   document.addEventListener('keydown', handleKeyDown)
-
-  function handleKeyDown(e){
-    console.log(e.key, 'pressed')
-    switch (e.key) {
-      case '4':
-        console.log('submission:', submission);
+function handleKeyDown(e){
+  console.log(e.key, 'pressed')
+  switch (e.key) {
+    case '4':
+      console.log(submission);
+      break;
+    case 'Enter':
+      handleEnter();
+      break;
+    case puzzle.name[0]:
+    handleClick(puzzle.name[0])
+      break;
+    case puzzle.name[1]:
+      handleClick(puzzle.name[1])
         break;
-      case 'Enter':
-        console.log('Enter pressed');
-        // handleEnter();
+    case puzzle.name[2]:
+      handleClick(puzzle.name[2])
         break;
-      case puzzle.name[0]:
-      handleClick(puzzle.name[0])
+    case puzzle.name[3]:
+      handleClick(puzzle.name[3])
         break;
-      case "Backspace":
-        handleDelete();
-          break;
-    }
+    case puzzle.name[4]:
+      handleClick(puzzle.name[4])
+        break;
+    case puzzle.name[5]:
+      handleClick(puzzle.name[5])
+        break;
+    case puzzle.name[6]:
+      handleClick(puzzle.name[6])
+        break;
+    case "Backspace":
+      handleDelete();
+        break;
   }
-  }, [])
+}
 
 function handleClick(letter){
   setSubmission(submission + letter)
@@ -80,9 +99,9 @@ function handleDelete(){
 function handleEnter(){
   console.log(submission);
   if (submission.length<5){
-    console.log('submission too short')
+    console.log('too short')
   }else 
-  console.log('submission is long enough')
+  console.log('long enough')
 }
 
 function checkPangram(){
@@ -95,7 +114,6 @@ function checkPangram(){
     }
   })
 }
-
 function checkValid(){
   puzzle.valids.forEach((valid) => { 
     if (submission.toLowerCase() === valid){
@@ -108,7 +126,7 @@ function checkValid(){
 }
 
 function jumble(){
-
+console.log(submission)
 }
 
   return (
@@ -123,7 +141,7 @@ function jumble(){
       <div id = "answerBar">
         <h2 id = "submission">{submission}</h2> 
         <button onClick={handleDelete} className ="button" style={{cursor: "pointer"}}>Delete</button>
-        <button className="button" style={{cursor: "pointer"}}>Jumble</button>
+        <button onClick={jumble}className="button" style={{cursor: "pointer"}}>submission</button>
         <button className="button" onClick={handleEnter} style={{cursor: "pointer"}}>Enter</button>
       </div>
       <div id ="puzzle">
