@@ -6,8 +6,8 @@ function App() {
     {
         id: 1,
         name: 'vpredol',
-        pangrams: ['developer', 'redevelop'],
-        valids: ['plover', 'proved', 'reproved', 'reprove', 'drove', 'loved', 'lover', 'rover', 'roved', 'evolve', 'evolved', 'revolve', 'revolved', 'revolver', 'devolve', 'devolved', 'revel', 'revelled', 'level', 'levelled', 'leveller', 'relevel', 'relevelled', 'lever', 'levered', 'delve', 'delved', 'delver', 'develop'],
+        pangrams: ['developer', 'redevelop', 'redeveloped'],
+        valids: ['plover', 'proved', 'developed', 'reproved', 'reprove', 'drove', 'loved', 'lover', 'rover', 'roved', 'evolve', 'evolved', 'revolve', 'revolved', 'revolver', 'devolve', 'devolved', 'revel', 'revelled', 'level', 'levelled', 'leveller', 'relevel', 'relevelled', 'lever', 'levered', 'delve', 'delved', 'delver', 'develop'],
     },
     {
         id: 2,
@@ -37,7 +37,6 @@ function App() {
 ]
   const [submission, setSubmission] = useState('')
   const [score, setScore] = useState(0)
-  const [answerList, setAnswerList] = useState([])
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
   const [pangram, setPangram] = useState(false)
   const [valid, setValid] = useState(false)
