@@ -7,7 +7,7 @@ function App() {
         id: 1,
         name: 'vpredol',
         pangrams: ['developer', 'redevelop'],
-        valids: ['plover', 'proved', 'reproved', 'reprove', 'drove', 'loved', 'lover', 'rover', 'roved', 'evolve', 'evolved', 'revolve', 'revolved', 'revolver', 'devolve', 'devolved', 'revel', 'revelled', 'level', 'levelled', 'leveller', 'relevel', 'relevelled', 'lever', 'levered', 'delve', 'delved', 'delver', 'develop'],
+        valids: ['plover', 'proved', 'reproved', 'reprove', 'drove', 'loved', 'lover', 'rover', 'roved', 'evolve', 'evolved', 'revolve', 'revolved', 'revolver', 'devolve', 'devolved', 'revel', 'revelled', 'level', 'levelled', 'leveller', 'relevel', 'relevelled', 'lever', 'levered', 'delve', 'delved', 'delver', 'develop', 'developed'],
     },
     {
         id: 2,
@@ -94,13 +94,18 @@ function handleDelete(){
 function checkAnswerList() {
   const found = answerList.find(answer => answer == submission)
   console.log('found:', !!found)
+  return !!found
 }
 
 
 async function handleEnter() {
- checkAnswerList()
+ const found = await checkAnswerList();
   if (submission.length < 5){
     alert('too short')
+    return
+  } else if (found){
+    alert('answer already found!');
+    setSubmission('');
     return
   } else if (submission.length > 6){
     try {
