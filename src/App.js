@@ -37,11 +37,7 @@ function App() {
 ]
   const [submission, setSubmission] = useState('')
   const [score, setScore] = useState(0)
-  const [answerList, setAnswerList] = useState([])
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
-  const [pangram, setPangram] = useState(false)
-  const [valid, setValid] = useState(false)
-
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -94,40 +90,58 @@ function handleDelete(){
 }
 
 async function handleEnter() {
-  try {
-    const pan = await checkPangram();
-    const val = await checkValid(pan);
-    const inval = await invalidAlert(val);
-  } catch(error) {
-    console.log(error);
+  if (submission.length < 5){
+    alert('too short')
+    return
+  } else if (submission.length > 6){
+    try {
+      const isPan = await checkPangram();
+      if (!isPan){
+        const isVal = await checkValid()
+        if (!isVal){invalidAlert()}
+      }
+      } catch(error) {
+        console.log(error);
+      }
+  } else if (submission.length > 4){
+    try {
+      const isVal = await checkValid();
+      if (!isVal){invalidAlert()};
+      } catch(error) {
+        console.log(error);
+      }
   }
 }
 
 function invalidAlert(){
   setSubmission('')
+  alert('invalid')
 }
 
-
 function checkPangram(){
+  let isPangram = false
   puzzle.pangrams.map((pangram) => { 
     if (submission.toLowerCase() === pangram){
-        setPangram(true)
+        isPangram = true
         setScore(score + 3);
         setSubmission('');
         alert('pangram!')
     }
   })
+  return isPangram
 }
 
 function checkValid(){
+  let isValid = false
   puzzle.valids.forEach((valid) => { 
     if (submission.toLowerCase() === valid){
+        isValid = true
         setScore(score + 1);
         setSubmission('');
         alert('valid!')
     }
   })
-  return valid
+  return isValid
 }
 
 function jumble(){
