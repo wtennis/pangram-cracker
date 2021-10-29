@@ -6,7 +6,7 @@ function App() {
     {
         id: 1,
         name: 'vpredol',
-        pangrams: ['developer', 'redevelop'],
+        pangrams: ['developer', 'redevelop', 'redeveloped'],
         valids: ['plover', 'proved', 'reproved', 'reprove', 'drove', 'loved', 'lover', 'rover', 'roved', 'evolve', 'evolved', 'revolve', 'revolved', 'revolver', 'devolve', 'devolved', 'revel', 'revelled', 'level', 'levelled', 'leveller', 'relevel', 'relevelled', 'lever', 'levered', 'delve', 'delved', 'delver', 'develop', 'developed'],
     },
     {
