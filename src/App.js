@@ -161,7 +161,9 @@ function checkValid(){
 }
 
 function newPuzzle(){
-setPuzzle(puzzles[Math.floor(Math.random() * puzzles.length)])
+setPuzzle(puzzles[Math.floor(Math.random() * puzzles.length)]);
+setScore(0);
+setAnswerList([]);
 }
 
   return (
