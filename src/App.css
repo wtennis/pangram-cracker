@@ -35,6 +35,13 @@ text-shadow: 1px 1px black;
 margin-left: 10px;
 }
 
+#answerList {
+  color:rgba(253, 251, 251, 0.863);
+  font-size: 20px;
+  text-shadow: 1px 1px black;
+  margin-left: 10px;
+  }
+
 #score{
   font-size: 30px;
   position: left;
@@ -138,9 +145,4 @@ margin-bottom: 300px;
 
 
 
-#answerList {
-  font-size: 30px;
-  color: rgba(253, 251, 251, 0.863);
-  text-shadow: 1px 1px black;
-}
 
