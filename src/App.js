@@ -38,6 +38,8 @@ function App() {
   const [submission, setSubmission] = useState('')
   const [score, setScore] = useState(0)
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
+  const [answerList, setAnswerList] = useState([])
+
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -89,7 +91,14 @@ function handleDelete(){
   setSubmission(submission.slice(0, -1))
 }
 
+function checkAnswerList() {
+  const found = answerList.find(answer => answer == submission)
+  console.log('found:', !!found)
+}
+
+
 async function handleEnter() {
+ checkAnswerList()
   if (submission.length < 5){
     alert('too short')
     return
@@ -123,6 +132,7 @@ function checkPangram(){
   puzzle.pangrams.map((pangram) => { 
     if (submission.toLowerCase() === pangram){
         isPangram = true
+        answerList.push(pangram)
         setScore(score + 3);
         setSubmission('');
         alert('pangram!')
@@ -136,6 +146,7 @@ function checkValid(){
   puzzle.valids.forEach((valid) => { 
     if (submission.toLowerCase() === valid){
         isValid = true
+        answerList.push(valid)
         setScore(score + 1);
         setSubmission('');
         alert('valid!')
@@ -145,7 +156,7 @@ function checkValid(){
 }
 
 function jumble(){
-console.log(submission)
+console.log(answerList)
 }
 
   return (
