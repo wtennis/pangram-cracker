@@ -160,8 +160,8 @@ function checkValid(){
   return isValid
 }
 
-function jumble(){
-console.log(answerList)
+function newPuzzle(){
+setPuzzle(puzzles[Math.floor(Math.random() * puzzles.length)])
 }
 
   return (
@@ -175,7 +175,7 @@ console.log(answerList)
       <div id = "answerBar">
         <h2 id = "submission">{submission}</h2> 
         <button onClick={handleDelete} className ="button" style={{cursor: "pointer"}}>Delete</button>
-        <button onClick={jumble}className="button" style={{cursor: "pointer"}}>submission</button>
+        <button onClick={newPuzzle}className="button" style={{cursor: "pointer"}}>New Puzzle</button>
         <button className="button" onClick={handleEnter} style={{cursor: "pointer"}}>Enter</button>
       </div>
       <div id ="puzzle">
