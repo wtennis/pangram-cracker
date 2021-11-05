@@ -1,5 +1,7 @@
 import './App.css';
 import { useState, useEffect } from 'react'
+import { bounce } from 'react-animations';
+import styled, { keyframes } from 'styled-components'
 
 function App() {
   const puzzles = [
@@ -131,6 +133,8 @@ function App() {
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
   const [answerList, setAnswerList] = useState([])
 
+  const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`}`;
+
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -259,7 +263,9 @@ setAnswerList([]);
 
   return (
     <div id = "container">
+      {/* <Bounce> */}
     <h1>Pangram Cracker</h1>
+    {/* </Bounce> */}
       <div className = "instructions">
         <h4 id= "instructions-header">Instructions</h4>
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
