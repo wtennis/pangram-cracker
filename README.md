@@ -1,4 +1,7 @@
-# Getting Started with Create React App
+# Pangram Cracker
+This project was inspired by the NYTimes Spelling Bee game. Enter valid words of 5 letters or more containing the center challenge letter to earn 1 point. Pangrams, words that use all 7 letters, are worth 3 points.
+
+Demo: https://www.loom.com/share/081e54b7786f48e59ff1cc69b4cc2530
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
