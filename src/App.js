@@ -1,7 +1,5 @@
 import './App.css';
 import { useState, useEffect } from 'react'
-import { pulse } from 'react-animations';
-import styled, { keyframes } from 'styled-components'
 import Banner from './Banner';
 
 function App() {

@@ -1,5 +1,4 @@
 import './App.css';
-import { useState, useEffect } from 'react'
 import styled, { keyframes } from 'styled-components'
 import { pulse } from 'react-animations';
 
