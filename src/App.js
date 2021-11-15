@@ -232,7 +232,7 @@ function checkPangram(){
         answerList.push(pangram)
         setScore(score + 3);
         setSubmission('');
-        showBanner('pangram')
+        showBanner('pangram!')
     }
   })
   return isPangram
@@ -268,16 +268,16 @@ function showBanner(banner){
 
   return (
     <div id = "container">
-      {/* <Pulse> */}
     <h1>Pangram Cracker</h1>
     {banner? <Banner banner = {banner}/> : null}
-    {/* </Pulse> */}
       <div className = "instructions">
         <h4 id= "instructions-header">Instructions</h4>
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
       </div>
       <h3 id = "score">Score: {score}</h3>
+      <div style ={{height: '15px'}}>
       <p id = "answerList">{answerList.join(', ')}</p>
+      </div>
       <div id = "answerBar">
         <h2 id = "submission">{submission}</h2> 
         <button onClick={handleDelete} className ="button" style={{cursor: "pointer"}}>Delete</button>

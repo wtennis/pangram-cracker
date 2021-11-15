@@ -6,7 +6,7 @@ import { pulse } from 'react-animations';
 function Banner({banner}) {
 
     const StyledBanner = styled.h2`
-    animation: 2s ${keyframes`${pulse}`};
+    animation: 1.5s ${keyframes`${pulse}`};
     font-size: 6rem;
     text-align: center;
     color: yellow;
