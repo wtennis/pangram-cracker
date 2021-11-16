@@ -26,7 +26,7 @@ function App() {
         id: 4,
         name: 'lanceuy',
         pangrams: ['uncleanly'],
-        valids: ['unlay', 'unclean', 'lacey', 'uncle','unlace', 'lunacy', 'lance', 'clean', 'cleanly' ],
+        valids: ["alane", "alanyl", "aleye", "allay", "allee", "allel", "allele", "alley", "allyl", "alula", "alulae", "anally", "ancle", "anelace", "anele", "anlace", "annal", "anneal", "annual", "annually", "annul", "caecal", "caecally", "calalu", "calcanea", "calcaneal", "calcanean", "calla", "callan", "callee", "calluna", "calyceal", "calycle", "calycule", "canal", "cancel", "canella", "cannel", "cannula", "cannulae", "canula", "canulae", "cecal", "cecally", "cella", "cellae", "cellule", "cenacle", "clayey", "clean", "cleanly", "cullay", "cully", "cuneal", "cycle", "ecuelle", "elance", "enlace", "lacey", "lacuna", "lacunae", "lacunal", "lacune", "lallan", "lance", "lanely", "lauan", "launce", "leally", "leanly", "leany", "leccy", "lucence", "lucency", "lunacy", "lunula", "lunulae", "lunule", "lycea", "lycee", "lyncean", "nacelle", "nalla", "neele", "nelly", "nucleal", "nucule", "nulla", "nuncle", "nyala", "ulnae", "uncle", "unclean", "unlace", "unlay", "unleal", "yulan" ],
     },
     {
         id: 5,
