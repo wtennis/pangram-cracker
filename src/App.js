@@ -1,6 +1,9 @@
 import './App.css';
 import { useState, useEffect } from 'react'
 import Banner from './Banner';
+import styled, { keyframes } from 'styled-components'
+import { bounce } from 'react-animations';
+
 
 function App() {
   const puzzles = [
@@ -132,6 +135,8 @@ function App() {
   const [puzzle, setPuzzle] = useState(puzzles[Math.floor(Math.random() * puzzles.length)])
   const [answerList, setAnswerList] = useState([])
   const [banner, setBanner] = useState(false)
+
+  // const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`}infinite`
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
@@ -268,7 +273,7 @@ function showBanner(banner){
 
   return (
     <div id = "container">
-    <h1>Pangram Cracker</h1>
+    {/* <Bounce><h1>Pangram Cracker</h1></Bounce> */}
     {banner? <Banner banner = {banner}/> : null}
       <div className = "instructions">
         <h4 id= "instructions-header">Instructions</h4>
