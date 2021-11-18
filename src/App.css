@@ -126,8 +126,6 @@ margin-left: 10px;
 
 }
 
-
-
 #newPuzzle {
   background-color: rgba(80, 2, 80, 0.966); /* Green */
 border: 1px solid #062821;
@@ -140,7 +138,6 @@ display: inline-block;
 font-size: 20px;
 text-shadow: 1px 1px black;
 margin-bottom: 300px;
-
 }
 
 
