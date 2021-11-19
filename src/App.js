@@ -147,9 +147,6 @@ function App() {
 
 function handleKeyDown(e){
   switch (e.key) {
-    case '4':
-      console.log(submission);
-      break;
     case 'Enter':
       handleEnter();
       break;
@@ -190,7 +187,6 @@ function handleDelete(){
 
 function checkAnswerList() {
   const found = answerList.find(answer => answer == submission)
-  console.log('found:', !!found)
   return !!found
 }
 
@@ -200,7 +196,9 @@ async function handleEnter() {
   if (submission.length < 5){
     showBanner('too short')
     return
-  } else if (found){
+  } else if (!submission.includes(puzzle.name[0])){
+    showBanner('must include center letter')
+  }else if(found){
     showBanner('answer found');
     setSubmission('');
     return
@@ -266,7 +264,6 @@ setAnswerList([]);
 function showBanner(banner){
   setBanner(banner)
   setTimeout(function(){
-    console.log("timeout");
     setBanner(false)
 }, 1500);
 }
