@@ -136,6 +136,7 @@ function App() {
   const [answerList, setAnswerList] = useState([])
   const [banner, setBanner] = useState(false)
 
+  let maxScore = puzzle.pangrams.length*3 + puzzle.valids.length
   // const Bounce = styled.div`animation: 2s ${keyframes`${bounce}`}infinite`
 
   useEffect(() => {
@@ -276,7 +277,7 @@ function showBanner(banner){
         <h4 id= "instructions-header">Instructions</h4>
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
       </div>
-      <h3 id = "score">Score: {score}</h3>
+      <h3 id = "score">Score: {score} / {maxScore} </h3>
       <div style ={{height: '15px'}}>
       <p id = "answerList">{answerList.join(', ')}</p>
       </div>
