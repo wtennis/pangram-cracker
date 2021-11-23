@@ -24,26 +24,26 @@ h1 {
 }
 
 #instructions-header {
-  font-size: 30px;
+  font-size: 40px;
 }
 
 .instructions {
 width: 40%;
 color:rgba(253, 251, 251, 0.863);
-font-size: 20px;
+font-size: 30px;
 text-shadow: 1px 1px black;
 margin-left: 10px;
 }
 
 #answerList {
   color:rgba(253, 251, 251, 0.863);
-  font-size: 20px;
+  font-size: 30px;
   text-shadow: 1px 1px black;
   margin-left: 10px;
   }
 
 #score{
-  font-size: 30px;
+  font-size: 40px;
   position: left;
   color: rgba(253, 251, 251, 0.863);
   text-shadow: 1px 1px black;
