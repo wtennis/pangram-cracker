@@ -46,4 +46,4 @@ def print_data(pangram, words)
   data
 end
 
-print_data('lncleanuy', words)
+print_data('certain', words)

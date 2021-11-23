@@ -16,8 +16,8 @@ function App() {
     {
         id: 2,
         name: 'crteani',
-        pangrams: ['certain', 'creatine', 'ceratin', 'nectarine'],
-        valids: ['carte', 'trice','nicer', 'react', 'nacre', 'citer', 'recant', 'nectar', 'cretin', 'create', 'crate', 'crater', 'caterer', 'react', 'trance', 'recreate', 'trace', 'tract', 'cater', 'center', 'canter', 'crane'],
+        pangrams: ['certain', 'creatine', 'ceratin', 'nectarine', 'centenarian', 'creatin', 'incarcerate', 'incinerate', 'interact', 'interactant', 'intricate', 'iterance', 'reincarnate'],
+        valids: ['acacia', 'carte', 'trice','nicer', 'react', 'nacre', 'citer', 'recant', 'nectar', 'cretin', 'create', 'crate', 'crater', 'caterer', 'react', 'trance', 'recreate', 'trace', 'tract', 'cater', 'center', 'canter', 'crane', 'accent', 'accrete', 'acetate', 'acetic', 'ancient', 'arctic', 'antarctic','arcane', 'attic', 'attract', 'antic', 'attractance', 'attractant', 'attracter', 'cacti', 'cairn', 'cancan', 'cancer', 'canine', 'canner', 'cannier', 'cantata', 'canteen', 'carte', 'cataract', 'carate', 'careen', 'careener', 'career', 'carer', 'carnie', 'carrier', 'carte', 'carter', 'cattier', 'centric', 'cicatrice', 'circa', 'citric', 'citer', 'crier', 'cretin', 'critic', 'critter', 'eccentric', 'enact', 'erect', 'entice', 'enticer', 'entrance', 'erect', 'erecter', 'erratic', 'etcetera', 'icier', 'inanct', 'inciter', 'incite', 'intact', 'internecine', 'nacre', 'nance', 'nectar', 'nicer', 'niece', 'racer', 'racier', 'reenact', 'reerect', 'reincite', 'reticence', 'reticent', 'retrace', 'retracer', 'retract', 'tacit', 'tactic', 'tactician', 'tannic', 'tantric', 'tercet', 'terrace', 'tictac', 'tinct', 'titanic', 'trace', 'tracer', 'tract', 'trance'],
     },
     {
         id: 3,
