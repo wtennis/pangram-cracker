@@ -270,6 +270,21 @@ function showBanner(banner){
 }, 1500);
 }
 
+function Achievement(){
+  let perc = (score/maxScore)*10;
+  if(perc > 10){
+    return "Good"
+  }else if (perc > 20){
+    return "Solid"
+  }else if (perc > 30){
+    return "Nice"
+  }else if (perc > 40){
+    return "Amazing"
+  }else if (perc > 50){
+    return "Genius"
+  }else return "Poor"
+}
+
   return (
     <div id = "container">
     {/* <Bounce><h1>Pangram Cracker</h1></Bounce> */}
@@ -278,8 +293,9 @@ function showBanner(banner){
         <h4 id= "instructions-header">Instructions</h4>
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
       </div>
-      <h3 id = "score">Score: {score} / {maxScore} </h3>
-      <div style ={{height: '15px'}}>
+      <h3 id = "score">Score: {score}/{maxScore}</h3>
+        <Achievement />
+        <div style ={{height: '15px'}}>
       <p id = "answerList">{answerList.join(', ')}</p>
       </div>
       <div id = "answerBar">
