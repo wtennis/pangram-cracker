@@ -271,7 +271,7 @@ function showBanner(banner){
 }
 
 function Achievement(){
-  let perc = (score/maxScore)*10;
+  let perc = (score/maxScore)*100;
   if(perc > 10){
     return "Good"
   }else if (perc > 20){
@@ -282,7 +282,7 @@ function Achievement(){
     return "Amazing"
   }else if (perc > 50){
     return "Genius"
-  }else return "Poor"
+  }else return " "
 }
 
   return (
@@ -294,7 +294,9 @@ function Achievement(){
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
       </div>
       <h3 id = "score">Score: {score}/{maxScore}</h3>
-        <Achievement />
+      <div id = "achievement">
+        <Achievement/>
+        </div>
         <div style ={{height: '15px'}}>
       <p id = "answerList">{answerList.join(', ')}</p>
       </div>
