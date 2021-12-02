@@ -272,13 +272,13 @@ function showBanner(banner){
 
 function Achievement(){
   let perc = score/maxScore*100;
-  if(perc < 20){
+  if(perc < 10){
     return ""
-  }else if (perc < 30){
+  }else if (perc < 25){
     return "Good"
   }else if (perc < 40){
     return "Solid"
-  }else if (perc < 50){
+  }else if (perc < 55){
     return "Amazing"
   } return "Genius"
 }
