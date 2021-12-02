@@ -272,15 +272,16 @@ function showBanner(banner){
 
 function Achievement(){
   let perc = score/maxScore*100;
-  if(perc < 20){
+  if(score < 1){
     return ""
   }else if (perc < 30){
-    return "Good"
+    return <h3 style={{color: "yellow"}}>Good</h3>
   }else if (perc < 40){
-    return "Solid"
+    return <h3 style={{color: "orange"}}>solid</h3>
   }else if (perc < 50){
-    return "Amazing"
-  } return "Genius"
+    return <h3 style={{color: "green"}}>amazing</h3>
+  } return <h3 style={{color: "blue"}}>genius</h3>
+
 }
 
   return (
@@ -291,7 +292,6 @@ function Achievement(){
         <h4 id= "instructions-header">Instructions</h4>
           <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
       </div>
-      <h3 id = "score">Score: {score}/{maxScore}</h3>
       <div id = "achievement">
         <Achievement/>
         </div>

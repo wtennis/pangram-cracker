@@ -39,23 +39,17 @@ margin-left: 10px;
   color:rgba(253, 251, 251, 0.863);
   font-size: 30px;
   text-shadow: 1px 1px black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
   margin-left: 10px;
   }
-
-#score{
-  font-size: 40px;
-  position: left;
-  color: rgba(253, 251, 251, 0.863);
-  text-shadow: 1px 1px black;
-  margin-left: 10px;
-}
 
 #achievement{
-  text-align: center;
   font-size: 40px;
-  color: rgba(253, 251, 251, 0.863);
-  text-shadow: 1px 1px black;
-  }
+  position: left;
+  margin-left: 10px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+}
 
 
 #answerBar {
