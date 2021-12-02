@@ -271,18 +271,16 @@ function showBanner(banner){
 }
 
 function Achievement(){
-  let perc = (score/maxScore)*100;
-  if(perc > 10){
+  let perc = score/maxScore*100;
+  if(perc < 20){
+    return ""
+  }else if (perc < 30){
     return "Good"
-  }else if (perc > 20){
+  }else if (perc < 40){
     return "Solid"
-  }else if (perc > 30){
-    return "Nice"
-  }else if (perc > 40){
+  }else if (perc < 50){
     return "Amazing"
-  }else if (perc > 50){
-    return "Genius"
-  }else return " "
+  } return "Genius"
 }
 
   return (
