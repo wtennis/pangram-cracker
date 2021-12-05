@@ -46,4 +46,35 @@ def print_data(pangram, words)
   data
 end
 
-print_data('certain', words)
+
+def matcher(word, words)
+  entry = word.split('')
+  finderObj = {}
+
+  entry.each_with_index do |letter, index|
+    if letter != '*'
+      finderObj[index] = letter
+    end
+  end
+
+  print finderObj
+  matches = []
+
+  words.each do |w|
+        if w.length == word.length
+          match = true
+          finderObj.keys.each do |index|
+          if w[index] != finderObj[index]
+            match = false
+          end
+        end
+        matches.push w if match
+      end
+  end
+  print matches
+
+end
+
+subSet = ["boxy","luxe", "maxi", "mixt"]
+
+matcher('**xy', words)
