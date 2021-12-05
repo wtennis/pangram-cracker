@@ -75,6 +75,17 @@ def matcher(word, words)
 
 end
 
-subSet = ["boxy","luxe", "maxi", "mixt"]
+subSet = ["entrance", "entry", "foxtrot", "cowboy"]
 
-matcher('**xy', words)
+def isSubstring(word, words)
+  matches = []
+  words.each do |w|
+      if (w.include? word) && w.length >= word.length
+        matches.push w
+      end
+    end
+  print matches
+end
+
+# matcher('**s***ed**', words)
+isSubstring('entr', words)
