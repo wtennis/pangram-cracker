@@ -1,8 +1,7 @@
 
 body {
-  background-image: url("https://htmlcolorcodes.com/assets/images/html-color-codes-color-tutorials-hero.jpg"); 
-  background-size: cover;
-  background-repeat: no-repeat;
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+  min-height: 100vh;
 }
 
 #container {
@@ -43,13 +42,34 @@ margin-left: 10px;
   margin-left: 10px;
   }
 
-#achievement{
-  font-size: 40px;
-  position: left;
+#scoreDisplay {
+  color: rgba(253, 251, 251, 0.863);
+  font-size: 24px;
+  text-shadow: 1px 1px black;
   margin-left: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 50px;
+}
+
+#scoreDisplay h3 {
+  margin: 0;
+  font-size: 28px;
   text-transform: uppercase;
-  height: 30px;
+}
+
+#scoreNumber {
+  font-size: 36px;
+  font-weight: bold;
+}
+
+#answerListContainer {
+  min-height: 30px;
+  max-height: 80px;
+  overflow-y: auto;
+  margin: 5px 10px;
 }
 
 
@@ -63,8 +83,8 @@ margin-left: 10px;
   color: white;
   letter-spacing: 10px;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  height: 15px;
-  margin-bottom: 50px;
+  min-height: 50px;
+  margin-bottom: 20px;
 }
 
 
