@@ -134,6 +134,7 @@ function App() {
   const [puzzle, setPuzzle] = useState(() => puzzles[Math.floor(Math.random() * puzzles.length)])
   const [answerList, setAnswerList] = useState([])
   const [banner, setBanner] = useState(false)
+  const [showSolutions, setShowSolutions] = useState(false)
 
   const maxScore = puzzle.pangrams.length * 3 + puzzle.valids.length
 
@@ -232,6 +233,7 @@ function App() {
     setScore(0)
     setSubmission('')
     setAnswerList([])
+    setShowSolutions(false)
   }
 
   function Achievement() {
@@ -248,43 +250,68 @@ function App() {
     return <h3 style={{color: "blue"}}>Genius</h3>
   }
 
+  const Cell = ({ letter, center }) => (
+    <div className={`hex-cell${center ? ' center' : ''}`} onClick={() => handleClick(letter)}>
+      <span>{letter}</span>
+    </div>
+  )
+
   return (
     <div id="container">
       {banner ? <Banner banner={banner} /> : null}
-      <div className="instructions">
-        <h4 id="instructions-header">Instructions</h4>
-        <p>Valid answers must be five letters or longer and use the center letter. Pangrams are worth 3 points. All other valid answers are worth 1 point.</p>
-      </div>
-      <div id="scoreDisplay">
-        <span id="scoreNumber">{score}</span> / {maxScore} points
-        <Achievement />
-      </div>
-      <div id="answerListContainer">
-        <p id="answerList">{answerList.join(', ')}</p>
-      </div>
-      <div id="answerBar">
-        <h2 id="submission">{submission}</h2>
-        <button onClick={handleDelete} className="button" style={{cursor: "pointer"}}>Delete</button>
-        <button onClick={handleEnter} className="button" style={{cursor: "pointer"}}>Enter</button>
-      </div>
-      <div id="puzzle">
-        <h2
-          style={{cursor: "pointer"}}
-          className="puzzleLetter"
-          onClick={(e) => handleClick(e.target.textContent)}
-        >{puzzle.name[1]}</h2>
-        <div id="line2">
-          <h2 style={{cursor: "pointer"}} className="puzzleLetter" onClick={(e) => handleClick(e.target.textContent)}>{puzzle.name[2]}</h2>
-          <h2 style={{cursor: "pointer"}} className="puzzleLetter" onClick={(e) => handleClick(e.target.textContent)}>{puzzle.name[3]}</h2>
+
+      <div id="top-section">
+        <div id="scoreDisplay">
+          <span id="scoreNumber">{score}</span> / {maxScore}
+          <Achievement />
         </div>
-        <h2 style={{cursor: "pointer"}} className="puzzleLetter" id="letterC" onClick={(e) => handleClick(e.target.textContent)}>{puzzle.name[0]}</h2>
-        <div id="line4">
-          <h2 style={{cursor: "pointer"}} className="puzzleLetter" onClick={(e) => handleClick(e.target.textContent)}>{puzzle.name[4]}</h2>
-          <h2 style={{cursor: "pointer"}} className="puzzleLetter" onClick={(e) => handleClick(e.target.textContent)}>{puzzle.name[5]}</h2>
+        <div id="answerListContainer">
+          <p id="answerList">{answerList.join(', ')}</p>
         </div>
-        <h2 style={{cursor: "pointer"}} className="puzzleLetter" onClick={(e) => handleClick(e.target.textContent)}>{puzzle.name[6]}</h2>
       </div>
-      <button onClick={newPuzzle} className="button" id="newPuzzle" style={{cursor: "pointer"}}>New Puzzle</button>
+
+      <div id="input-area">
+        <div id="submission">{submission || <span className="placeholder">Type or click</span>}</div>
+      </div>
+
+      <div id="hive">
+        <div className="hive-row">
+          <Cell letter={puzzle.name[1]} />
+          <Cell letter={puzzle.name[2]} />
+        </div>
+        <div className="hive-row">
+          <Cell letter={puzzle.name[3]} />
+          <Cell letter={puzzle.name[0]} center />
+          <Cell letter={puzzle.name[4]} />
+        </div>
+        <div className="hive-row">
+          <Cell letter={puzzle.name[5]} />
+          <Cell letter={puzzle.name[6]} />
+        </div>
+      </div>
+
+      <div id="controls">
+        <button onClick={handleDelete} className="control-btn">Delete</button>
+        <button onClick={handleEnter} className="control-btn enter-btn">Enter</button>
+        <button onClick={newPuzzle} className="control-btn">New Puzzle</button>
+      </div>
+
+      <div id="extras">
+        <button onClick={() => setShowSolutions(prev => !prev)} className="control-btn">
+          {showSolutions ? 'Hide Solutions' : 'Show Solutions'}
+        </button>
+      </div>
+
+      {showSolutions && (
+        <div id="solutionsContainer">
+          <p><strong>Pangrams:</strong> {puzzle.pangrams.join(', ')}</p>
+          <p><strong>Remaining:</strong> {puzzle.valids.filter(v => !answerList.includes(v)).join(', ')}</p>
+        </div>
+      )}
+
+      <div id="instructions">
+        <p>Create words using letters from the hive. Words must be 5+ letters and include the center letter. Pangrams use all 7 letters and score 3 pts.</p>
+      </div>
     </div>
   );
 }
